@@ -149,7 +149,7 @@
                         <p class="text-gray-700">At their Spokane clinic, Patrick and Jodie aim to provide a professional and welcoming environment where clients can receive individualized therapeutic care tailored to their needs and long-term wellbeing.</p>
                     </div>
                     <div class="relative">
-                        <img src="https://picsum.photos/600/400?random=1" alt="Patrick and Jodie Stewart, massage therapists at Rebalance Point Massage" class="rounded-lg shadow-lg w-full" loading="lazy">
+                        <img src="images/massage-room.jpg" alt="Massage Room" class="rounded-lg shadow-lg w-full object-cover" style="min-height:320px;max-height:500px;">
                         <div class="absolute -bottom-4 -right-4 bg-accent text-dark p-4 rounded-lg shadow-lg max-w-xs">
                             <p class="font-semibold italic">"Massage is where art and science meet through the medium of touch to create healing"</p>
                         </div>
@@ -167,7 +167,7 @@
                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">Therapeutic massage sessions customized to your individual needs and wellness goals.</p>
                 </div>
                 
-                <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
                     <!-- Services will be rendered here -->
                 </div>
                 
@@ -298,7 +298,7 @@
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/rebalancepointmassage" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-accent transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
                         <!-- <a href="#" class="text-gray-300 hover:text-accent transition duration-300"><i class="fab fa-instagram text-xl"></i></a> -->
-                        <a href="https://share.google/DWDWPV4DUFRZWSyEN" class="text-gray-300 hover:text-accent transition duration-300"><i class="fab fa-google text-xl"></i></a> -->
+                        <a href="https://share.google/DWDWPV4DUFRZWSyEN" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-accent transition duration-300"><i class="fab fa-google text-xl"></i></a>
                     </div>
                 </div>
                 
@@ -323,7 +323,7 @@
             <div class="pt-8 border-t border-gray-700 text-center text-gray-400">
                 <p>&copy; <span id="current-year"></span> Rebalance Point Massage. All rights reserved. | 206 S Post St STE 712C, Spokane, WA 99201</p>
                 <p class="mt-2 text-sm">Locally owned and operated by Patrick and Jodie Stewart.</p>
-                <p class="mt-4 text-xs text-gray-500">This website does not collect personal information directly. Online appointment scheduling is handled through Carepatron's secure platform. This site may load limited third-party resources such as fonts, icons, and booking links.</p>
+                <p class="mt-4 text-xs text-gray-500">This website does not collect personal information through a direct web form. Online appointment scheduling is handled through Carepatron's secure platform. Please review our <a href="./privacy.html" class="text-gray-300 hover:text-accent underline">Privacy Policy</a> and <a href="./terms.html" class="text-gray-300 hover:text-accent underline">Messaging Terms</a> for details about informational communications.</p>
             </div>
         </div>
     </footer>
@@ -344,7 +344,7 @@
                 "description": "A therapeutic massage session customized to address your individual needs, whether focusing on a specific concern or supporting overall musculoskeletal balance.",
                 "duration": "60 minutes",
                 "price": "$80",
-                "icon": "fas fa-clock",
+                "icon": "fas fa-hand-holding-medical",
                 "color": "primary",
                 "features": ["Customized therapeutic treatment", "Focused work for pain, tension, or mobility restrictions", "Relief from muscle tightness and stiffness", "Support for improved circulation", "Encourages relaxation and recovery"]
             },
@@ -353,7 +353,7 @@
                 "description": "An extended therapeutic session that allows time to address multiple areas of concern and work more thoroughly through complex patterns of tension.",
                 "duration": "90 minutes",
                 "price": "$120",
-                "icon": "fas fa-hourglass-half",
+                "icon": "fas fa-hand-holding-medical",
                 "color": "secondary",
                 "features": ["Time to address multiple areas of the body", "More comprehensive therapeutic treatment", "More time to work through persistent patterns of tension", "Greater opportunity for mobility improvement", "Supports deeper relaxation and recovery"]
             },
@@ -365,6 +365,15 @@
                 "icon": "fas fa-plus-circle",
                 "color": "accent",
                 "features": ["Supports facial lymphatic drainage", "Encourages healthy circulation to facial tissues", "Helps reduce facial muscle tension and jaw tightness", "May help reduce the appearance of fine lines and wrinkles", "May be added to any massage session" ]
+            },
+            { 
+                "title": "Injury Rehab Massage", 
+                "description": "Focused treatment for recovery from motor vehicle accidents and other musculoskeletal injuries. Sessions emphasize targeted manual therapy to reduce pain, restore mobility, and support safe return to normal activity. Care may include coordinated treatment with other healthcare providers when appropriate.",
+                "duration": "60 minutes",
+                "price": "$120",
+                "icon": "fas fa-car-crash",
+                "color": "secondary",
+                "features": ["Supports recovery from musculoskeletal injuries", "Helps restore mobility and joint function", "Encourages healthy tissue healing and remodeling", "Improves overall movement and physical function"]
             }
         ];
 
@@ -454,7 +463,9 @@
             { "label": "About Us", "href": "#about" },
             { "label": "Services & Pricing", "href": "#services" },
             { "label": "Research", "href": "#research" },
-            { "label": "Contact", "href": "#contact" }
+            { "label": "Contact", "href": "#contact" },
+            { "label": "Privacy Policy", "href": "./privacy.html" },
+            { "label": "Messaging Terms", "href": "./terms.html" }
         ];
 
         // Reusable Render Functions
@@ -469,8 +480,8 @@
             return items.map(item => {
                 const colorClass = item.color === "accent" ? "bg-accent text-dark" : `bg-${item.color} text-white`;
                 return `
-                <div class="bg-white rounded-xl shadow-lg card-hover overflow-hidden border border-gray-100">
-                    <div class="p-6">
+                <div class="bg-white rounded-xl shadow-lg card-hover overflow-hidden border border-gray-100 h-full">
+                    <div class="p-6 flex h-full flex-col">
                         <div class="service-icon ${colorClass} mx-auto">
                             <i class="${item.icon} text-2xl"></i>
                         </div>
@@ -483,7 +494,7 @@
                         <ul class="space-y-2 mb-6">
                             ${item.features.map(feature => `<li class="flex items-center text-gray-700"><i class="fas fa-check text-accent mr-2"></i>${feature}</li>`).join("")}
                         </ul>
-                        <a href="https://book.carepatron.com/Rebalance-Point-Massage/All?p=B9d7sKXDTG6LRym3U5.KQQ&sc=KURssp65QgyobWfzcaGHAQ" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary text-white text-center font-semibold py-3 rounded-lg hover:bg-secondary transition duration-300">Book Now</a>
+                        <a href="https://book.carepatron.com/Rebalance-Point-Massage/All?p=B9d7sKXDTG6LRym3U5.KQQ&sc=KURssp65QgyobWfzcaGHAQ" target="_blank" rel="noopener noreferrer" class="block w-full bg-primary text-white text-center font-semibold py-3 rounded-lg hover:bg-secondary transition duration-300 mt-auto">Book Now</a>
                     </div>
                 </div>`;
             }).join("");
@@ -519,7 +530,7 @@
                         <i class="${item.icon} text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-semibold text-primary mb-3">${item.title}</h3>
-                    <p class="text-gray-600 mb-6">${item.description}</p>
+                    <p class="text-gray-600 mb-6 break-words">${item.description}</p>
                     <a href="${item.action}" ${targetAttr} class="inline-block ${colorClass.replace('text-dark', 'text-white')} font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
                         ${item.actionText}
                     </a>
