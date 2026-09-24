@@ -3,6 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8F9FA">
+    <script>
+        (function () {
+            try {
+                var pref = localStorage.getItem('rp-theme');
+                var resolved = (pref === 'light' || pref === 'dark')
+                    ? pref
+                    : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', resolved);
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0B1220' : '#F8F9FA');
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
     <title>Privacy Policy | Rebalance Point Massage</title>
     <meta name="description" content="Review the Rebalance Point Massage privacy practices, including mobile SMS messaging privacy details and how appointment communication information is used.">
     <meta name="author" content="Rebalance Point Massage">
@@ -24,6 +40,7 @@
     <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/theme.css">
     <style>
         @media (min-width: 768px) and (max-width: 1279px) {
             .site-desktop-nav { display: none; }
@@ -37,6 +54,7 @@
                 .site-mobile-nav { display: block !important; }
                 .site-mobile-menu-button { display: none !important; }
             }
+            .theme-toggle { display: none !important; }
         </style>
     </noscript>
 </head>
@@ -51,13 +69,39 @@
                     <a href="./index.html#home" class="text-2xl font-serif font-semibold text-primary">Rebalance Point <span class="text-secondary">Massage</span></a>
                 </div>
                 
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="site-mobile-menu-button md:hidden text-primary text-xl" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <!-- Desktop Navigation -->
-                <ul id="desktop-nav" class="site-desktop-nav hidden md:flex space-x-8">
+                <div class="flex items-center gap-2">
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="site-mobile-menu-button md:hidden text-primary text-xl" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="theme-toggle site-mobile-menu-button md:hidden" data-theme-toggle>
+                        <button type="button" id="theme-toggle-trigger-mobile" class="theme-toggle-trigger" data-theme-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="theme-toggle-menu-mobile">
+                            <i class="fas fa-sun" data-theme-icon aria-hidden="true"></i>
+                            <span class="sr-only">Change color theme</span>
+                        </button>
+                        <div id="theme-toggle-menu-mobile" class="theme-toggle-menu" data-theme-menu role="menu" aria-label="Color theme" hidden>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="light" aria-checked="false">
+                                <i class="fas fa-sun theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">Light</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="dark" aria-checked="false">
+                                <i class="fas fa-moon theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">Dark</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="system" aria-checked="false">
+                                <i class="fas fa-desktop theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">System</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <!-- Desktop Navigation -->
+                    <ul id="desktop-nav" class="site-desktop-nav hidden md:flex space-x-8">
                     <li><a href="./index.html#home" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-home mr-2" aria-hidden="true"></i>Home</a></li>
                     <li><a href="./index.html#about" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-user-friends mr-2" aria-hidden="true"></i>About</a></li>
                     <li><a href="./index.html#services" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-spa mr-2" aria-hidden="true"></i>Services</a></li>
@@ -65,6 +109,30 @@
                     <li><a href="./index.html#research" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-clipboard-check mr-2" aria-hidden="true"></i>Research</a></li>
                     <li><a href="./index.html#contact" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>Contact</a></li>
                 </ul>
+                    <div class="theme-toggle site-desktop-nav hidden md:flex items-center" data-theme-toggle>
+                        <button type="button" id="theme-toggle-trigger-desktop" class="theme-toggle-trigger" data-theme-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="theme-toggle-menu-desktop">
+                            <i class="fas fa-sun" data-theme-icon aria-hidden="true"></i>
+                            <span class="sr-only">Change color theme</span>
+                        </button>
+                        <div id="theme-toggle-menu-desktop" class="theme-toggle-menu" data-theme-menu role="menu" aria-label="Color theme" hidden>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="light" aria-checked="false">
+                                <i class="fas fa-sun theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">Light</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="dark" aria-checked="false">
+                                <i class="fas fa-moon theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">Dark</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="system" aria-checked="false">
+                                <i class="fas fa-desktop theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">System</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </nav>
             
             <!-- Mobile Navigation -->
@@ -193,5 +261,6 @@
             });
         });
     </script>
+    <script src="js/theme.js" defer></script>
 </body>
 </html>

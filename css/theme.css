@@ -1,0 +1,141 @@
+/* Semantic theme tokens + dark mode overrides for Rebalance Point Massage.
+   Light values match the existing shipped design; dark values are new. */
+:root {
+    --rp-bg: #F8F9FA;
+    --rp-surface: #FFFFFF;
+    --rp-surface-alt: #F9FAFB;
+    --rp-border-soft: #F3F4F6;
+    --rp-border: #E5E7EB;
+    --rp-text-heading: #2C3E50;
+    --rp-text-body: #374151;
+    --rp-text-muted: #4B5563;
+    --rp-text-faint: #6B7280;
+    --rp-primary: #256E91;
+    --rp-secondary: #20718E;
+    --rp-accent: #D9C8A1;
+    --rp-focus-ring: #256E91;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --rp-bg: #0B1220;
+    --rp-surface: #141D2E;
+    --rp-surface-alt: #1B2740;
+    --rp-border-soft: #22304A;
+    --rp-border: #2B3B57;
+    --rp-text-heading: #F3EFE6;
+    --rp-text-body: #C7D0DE;
+    --rp-text-muted: #9AA7BA;
+    --rp-text-faint: #8792A6;
+    --rp-primary: #6FB7D9;
+    --rp-secondary: #56C2C2;
+    --rp-accent: #D9C8A1;
+    --rp-focus-ring: #6FB7D9;
+    color-scheme: dark;
+}
+
+/* Base surfaces */
+[data-theme="dark"] body { background-color: var(--rp-bg); color: var(--rp-text-heading); }
+[data-theme="dark"] .bg-white { background-color: var(--rp-surface); }
+[data-theme="dark"] .bg-light { background-color: var(--rp-bg); }
+[data-theme="dark"] .bg-gray-50 { background-color: var(--rp-surface-alt); }
+
+/* Hero banner keeps its brand gradient + a light "Book Appointment" chip in both themes */
+[data-theme="dark"] .hero-gradient .bg-white { background-color: #FFFFFF; }
+[data-theme="dark"] .hero-gradient .text-primary { color: #256E91; }
+
+/* Text */
+[data-theme="dark"] .text-primary { color: var(--rp-primary); }
+[data-theme="dark"] .text-secondary { color: var(--rp-secondary); }
+[data-theme="dark"] .text-gray-700 { color: var(--rp-text-body); }
+[data-theme="dark"] .text-gray-600 { color: var(--rp-text-muted); }
+[data-theme="dark"] .text-gray-500,
+[data-theme="dark"] .text-gray-400 { color: var(--rp-text-faint); }
+/* .text-dark on solid accent/gold badges must stay dark for contrast; only these
+   nav links + headings sit on a neutral surface and need to flip with the theme. */
+[data-theme="dark"] #contact h5.text-dark { color: var(--rp-text-heading); }
+[data-theme="dark"] #desktop-nav a.text-dark { color: var(--rp-text-heading); }
+
+/* Borders */
+[data-theme="dark"] .border-gray-100 { border-color: var(--rp-border-soft); }
+[data-theme="dark"] .border-gray-200 { border-color: var(--rp-border); }
+[data-theme="dark"] .divide-gray-100 > :not([hidden]) ~ :not([hidden]) { border-color: var(--rp-border-soft); }
+[data-theme="dark"] #mobile-nav { border-top-color: var(--rp-border); }
+
+/* ---------- Theme toggle control ---------- */
+.theme-toggle { position: relative; }
+
+.theme-toggle-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    border: 1px solid var(--rp-border);
+    background: transparent;
+    color: var(--rp-text-heading);
+    cursor: pointer;
+}
+
+[data-theme="dark"] .theme-toggle-trigger { color: var(--rp-text-heading); }
+
+.theme-toggle-trigger:hover { background-color: rgba(37, 110, 145, 0.08); }
+[data-theme="dark"] .theme-toggle-trigger:hover { background-color: rgba(111, 183, 217, 0.12); }
+
+.theme-toggle-trigger:focus-visible,
+.theme-toggle-option:focus-visible {
+    outline: 2px solid var(--rp-focus-ring);
+    outline-offset: 2px;
+}
+
+.theme-toggle-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    min-width: 10rem;
+    padding: 0.35rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--rp-border);
+    background-color: var(--rp-surface);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 60;
+}
+
+.theme-toggle-menu[hidden] { display: none; }
+
+.theme-toggle-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border: 0;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--rp-text-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+}
+
+.theme-toggle-option:hover { background-color: rgba(37, 110, 145, 0.08); }
+[data-theme="dark"] .theme-toggle-option:hover { background-color: rgba(111, 183, 217, 0.12); }
+
+.theme-toggle-option[aria-checked="true"] { color: var(--rp-primary); font-weight: 600; }
+
+.theme-toggle-option-icon { width: 1.1rem; text-align: center; flex-shrink: 0; }
+.theme-toggle-option-label { flex: 1; }
+.theme-toggle-option-check { flex-shrink: 0; visibility: hidden; }
+.theme-toggle-option[aria-checked="true"] .theme-toggle-option-check { visibility: visible; }
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle-trigger,
+    .theme-toggle-option,
+    .theme-toggle-menu {
+        transition: none !important;
+        animation: none !important;
+    }
+}
