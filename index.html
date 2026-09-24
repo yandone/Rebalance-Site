@@ -19,7 +19,14 @@
     <meta property="og:description" content="Therapeutic massage in downtown Spokane and on-site chair massage for local workplaces, races, tournaments, and sporting events.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rebalancepointmassage.com">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://rebalancepointmassage.com/images/Rebalance%20Social%20Preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1731">
+    <meta property="og:image:height" content="909">
+    <meta property="og:image:alt" content="Rebalance Point Massage social preview showing a massage room, therapeutic massage, and on-site chair massage in Spokane, Washington.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://rebalancepointmassage.com/images/Rebalance%20Social%20Preview.png">
+    <meta name="twitter:image:alt" content="Rebalance Point Massage social preview showing a massage room, therapeutic massage, and on-site chair massage in Spokane, Washington.">
     <meta name="twitter:title" content="Rebalance Point Massage | Therapeutic &amp; On-Site Chair Massage">
     <meta name="twitter:description" content="Therapeutic massage in downtown Spokane and on-site chair massage for local workplaces, races, tournaments, and sporting events.">
     <link rel="canonical" href="https://rebalancepointmassage.com">
@@ -90,8 +97,13 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(37, 110, 145, 0.15);
         }
-        #On-Site {
+        main section[id] {
             scroll-margin-top: 6rem;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
         }
         @media (min-width: 768px) and (max-width: 1279px) {
             .onsite-planning { grid-column: 1 / -1; }
@@ -106,12 +118,20 @@
             .onsite-sports { grid-column: 3; grid-row: 1; }
         }
     </style>
+    <noscript>
+        <style>
+            @media (max-width: 1279px) {
+                .site-mobile-nav { display: block !important; }
+                .site-mobile-menu-button { display: none !important; }
+            }
+        </style>
+    </noscript>
 </head>
 <body class="min-h-screen bg-light text-dark font-sans">
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
         <div class="container mx-auto px-4">
-            <nav class="flex justify-between items-center py-2">
+            <nav class="flex justify-between items-center py-2" aria-label="Primary navigation">
                 <div class="flex items-center gap-3">
                     <a href="#home" class="w-20 h-20 flex-shrink-0" title="Rebalance Point Massage">
                         <img src="images/rebalance-point-logo.png" alt="Rebalance Point Massage Logo" class="w-full h-full object-contain">
@@ -126,16 +146,26 @@
                 
                 <!-- Desktop Navigation -->
                 <ul id="desktop-nav" class="site-desktop-nav hidden md:flex space-x-8">
-                    <!-- Navigation items will be rendered here -->
+                    <li><a href="#home" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-home mr-2" aria-hidden="true"></i>Home</a></li>
+                    <li><a href="#about" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-user-friends mr-2" aria-hidden="true"></i>About</a></li>
+                    <li><a href="#services" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-spa mr-2" aria-hidden="true"></i>Services</a></li>
+                    <li><a href="#On-Site" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-calendar-alt mr-2" aria-hidden="true"></i>On-Site</a></li>
+                    <li><a href="#research" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-clipboard-check mr-2" aria-hidden="true"></i>Research</a></li>
+                    <li><a href="#contact" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>Contact</a></li>
                 </ul>
             </nav>
             
             <!-- Mobile Navigation -->
-            <div id="mobile-nav" class="site-mobile-nav hidden md:hidden bg-white border-t py-4">
+            <nav id="mobile-nav" class="site-mobile-nav hidden md:hidden bg-white border-t py-4" aria-label="Mobile navigation">
                 <ul id="mobile-nav-list" class="space-y-3">
-                    <!-- Mobile navigation items will be rendered here -->
+                    <li><a href="#home" class="block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300"><i class="fas fa-home mr-2" aria-hidden="true"></i>Home</a></li>
+                    <li><a href="#about" class="block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300"><i class="fas fa-user-friends mr-2" aria-hidden="true"></i>About</a></li>
+                    <li><a href="#services" class="block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300"><i class="fas fa-spa mr-2" aria-hidden="true"></i>Services</a></li>
+                    <li><a href="#On-Site" class="block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300"><i class="fas fa-calendar-alt mr-2" aria-hidden="true"></i>On-Site</a></li>
+                    <li><a href="#research" class="block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300"><i class="fas fa-clipboard-check mr-2" aria-hidden="true"></i>Research</a></li>
+                    <li><a href="#contact" class="block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300"><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>Contact</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
 
@@ -352,7 +382,101 @@
                 </div>
                 
                 <div id="research-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Research items will be rendered here -->
+                    <article class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
+                        <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
+                            <i class="fas fa-brain text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Stress Reduction</h3>
+                        <p class="text-gray-700 mb-4">Massage therapy may help reduce perceived stress and promote relaxation. Proposed hormonal and neurochemical mechanisms remain uncertain.</p>
+                        <div class="mb-4 text-xs text-gray-500">
+                            <i class="fas fa-book-open mr-1" aria-hidden="true"></i> <span class="font-medium">International Journal of Neuroscience</span>
+                        </div>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/16162447/" target="_blank" rel="noopener noreferrer" aria-label="View research on stress reduction and massage" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
+                            View Research
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
+                        <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
+                            <i class="fas fa-hand-holding-heart text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Pain Management</h3>
+                        <p class="text-gray-700 mb-4">Massage therapy may reduce pain and improve function in some musculoskeletal conditions, with evidence varying by condition and treatment approach.</p>
+                        <div class="mb-4 p-3 bg-gray-50 rounded-lg border-l-2 border-primary border-opacity-30">
+                            <p class="text-sm text-gray-600 italic">"Massage therapy may be effective for treatment of chronic back pain."</p>
+                        </div>
+                        <div class="mb-4 text-xs text-gray-500">
+                            <i class="fas fa-book-open mr-1" aria-hidden="true"></i> <span class="font-medium">Annals of Internal Medicine</span>
+                        </div>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/21727288/" target="_blank" rel="noopener noreferrer" aria-label="View research on pain management and massage" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
+                            View Research
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
+                        <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
+                            <i class="fas fa-bed text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Sleep and Massage</h3>
+                        <p class="text-gray-700 mb-4">Some studies have reported sleep improvements after massage, but findings are limited and appear to vary across populations.</p>
+                        <div class="mb-4 p-3 bg-gray-50 rounded-lg border-l-2 border-primary border-opacity-30">
+                            <p class="text-sm text-gray-600 italic">"only the massage therapy group reported an increase in the number of sleep hours."</p>
+                        </div>
+                        <div class="mb-4 text-xs text-gray-500">
+                            <i class="fas fa-book-open mr-1" aria-hidden="true"></i> <span class="font-medium">Journal of Clinical Rheumatology</span>
+                        </div>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/17041326/" target="_blank" rel="noopener noreferrer" aria-label="View research on sleep and massage" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
+                            View Research
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
+                        <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
+                            <i class="fas fa-shield-alt text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Immune-Related Biomarkers</h3>
+                        <p class="text-gray-700 mb-4">Preliminary research has found short-term changes in some immune-related biomarkers following massage, but the clinical significance of these findings remains uncertain.</p>
+                        <div class="mb-4 text-xs text-gray-500">
+                            <i class="fas fa-book-open mr-1" aria-hidden="true"></i> <span class="font-medium">Journal of Alternative and Complementary Medicine</span>
+                        </div>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/20809811/" target="_blank" rel="noopener noreferrer" aria-label="View research on immune-related biomarkers and massage" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
+                            View Research
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
+                        <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
+                            <i class="fas fa-heartbeat text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Blood Pressure</h3>
+                        <p class="text-gray-700 mb-4">Repeated massage has been associated with short-term reductions in blood pressure in some people with elevated blood pressure.</p>
+                        <div class="mb-4 p-3 bg-gray-50 rounded-lg border-l-2 border-primary border-opacity-30">
+                            <p class="text-sm text-gray-600 italic">"mean systolic and diastolic blood pressure in the massage group was significantly lower."</p>
+                        </div>
+                        <div class="mb-4 text-xs text-gray-500">
+                            <i class="fas fa-book-open mr-1" aria-hidden="true"></i> <span class="font-medium">Iranian Journal of Nursing and Midwifery Research</span>
+                        </div>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/22039381/" target="_blank" rel="noopener noreferrer" aria-label="View research on blood pressure and massage" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
+                            View Research
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
+                        <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
+                            <i class="fas fa-smile text-2xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-3">Mental Health</h3>
+                        <p class="text-gray-700 mb-4">Research suggests massage may help reduce measured symptoms of anxiety and depression in some populations.</p>
+                        <div class="mb-4 p-3 bg-gray-50 rounded-lg border-l-2 border-primary border-opacity-30">
+                            <p class="text-sm text-gray-600 italic">"Reductions of trait anxiety and depression were MT's largest effects."</p>
+                        </div>
+                        <div class="mb-4 text-xs text-gray-500">
+                            <i class="fas fa-book-open mr-1" aria-hidden="true"></i> <span class="font-medium">Psychological Bulletin</span>
+                        </div>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/14717648/" target="_blank" rel="noopener noreferrer" aria-label="View research on anxiety, depression, and massage" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
+                            View Research
+                        </a>
+                    </article>
                 </div>
                 
                 <div class="mt-12 text-center">
@@ -377,7 +501,38 @@
                         <p class="text-gray-700 text-center mb-8 break-words">For on-site workplace or sporting events, please email <a href="mailto:info@rebalancepointmassage.com?subject=On-Site%20Massage%20Event%20Inquiry" class="text-primary font-semibold hover:underline">info@rebalancepointmassage.com</a> to arrange the details.</p>
                         
                         <div id="contact-methods" class="grid md:grid-cols-3 gap-6 mb-8">
-                            <!-- Contact methods will be rendered here -->
+                            <div class="contact-card bg-white rounded-xl p-6 border border-gray-200 text-center">
+                                <div class="service-icon bg-primary text-white mx-auto">
+                                    <i class="fas fa-calendar-alt text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-primary mb-3">Online Booking</h3>
+                                <p class="text-gray-600 mb-6 break-words">Schedule appointments instantly through our secure online booking system.</p>
+                                <a href="https://book.carepatron.com/Rebalance-Point-Massage/All?p=B9d7sKXDTG6LRym3U5.KQQ&amp;sc=KURssp65QgyobWfzcaGHAQ" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
+                                    Book Now
+                                </a>
+                            </div>
+
+                            <div class="contact-card bg-white rounded-xl p-6 border border-gray-200 text-center">
+                                <div class="service-icon bg-secondary text-white mx-auto">
+                                    <i class="fas fa-phone-alt text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-primary mb-3">Phone &amp; Text</h3>
+                                <p class="text-gray-600 mb-6 break-words">Call or text us at (509) 285-9489 for individual appointment questions or special requests like couple's massage.</p>
+                                <a href="tel:5092859489" class="inline-block bg-secondary text-white font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
+                                    Call Now
+                                </a>
+                            </div>
+
+                            <div class="contact-card bg-white rounded-xl p-6 border border-gray-200 text-center">
+                                <div class="service-icon bg-accent text-dark mx-auto">
+                                    <i class="fas fa-envelope text-2xl" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-primary mb-3">Email</h3>
+                                <p class="text-gray-600 mb-6 break-words">Send us an email at info@rebalancepointmassage.com for general inquiries.</p>
+                                <a href="mailto:info@rebalancepointmassage.com" class="inline-block bg-accent text-dark font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
+                                    Email Us
+                                </a>
+                            </div>
                         </div>
                         
                         <div class="text-center">
@@ -461,7 +616,14 @@
                 <div>
                     <h4 class="text-xl font-semibold text-white mb-6">Quick Links</h4>
                     <ul id="footer-links" class="space-y-2">
-                        <!-- Footer links will be rendered here -->
+                        <li><a href="#home" class="text-gray-300 hover:text-accent transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-accent transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-accent transition duration-300">Services &amp; Pricing</a></li>
+                        <li><a href="#On-Site" class="text-gray-300 hover:text-accent transition duration-300">On-Site Chair Massage</a></li>
+                        <li><a href="#research" class="text-gray-300 hover:text-accent transition duration-300">Research</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-accent transition duration-300">Contact</a></li>
+                        <li><a href="./privacy.html" class="text-gray-300 hover:text-accent transition duration-300">Privacy Policy</a></li>
+                        <li><a href="./terms.html" class="text-gray-300 hover:text-accent transition duration-300">Messaging Terms</a></li>
                     </ul>
                 </div>
                 
@@ -478,7 +640,7 @@
             </div>
             
             <div class="pt-8 border-t border-gray-700 text-center" style="color:#a2a9b4;">
-                <p>&copy; <span id="current-year"></span> Rebalance Point Massage. All rights reserved. | 206 S Post St STE 712C, Spokane, WA 99201</p>
+                <p>&copy; <span id="current-year">2026</span> Rebalance Point Massage. All rights reserved. | 206 S Post St STE 712C, Spokane, WA 99201</p>
                 <p class="mt-2 text-sm">Locally owned and operated by Patrick and Jodie Stewart.</p>
                 <p class="mt-4 text-xs">This website does not collect personal information through a direct web form. Online appointment scheduling is handled through Carepatron's secure platform. Please review our <a href="./privacy.html" class="text-gray-300 hover:text-accent underline">Privacy Policy</a> and <a href="./terms.html" class="text-gray-300 hover:text-accent underline">Messaging Terms</a> for details about informational communications.</p>
             </div>
@@ -486,178 +648,12 @@
     </footer>
 
     <script>
-        // Data Layer
-        const navigationItems = [
-            { "label": "Home", "href": "#home", "icon": "fas fa-home" },
-            { "label": "About", "href": "#about", "icon": "fas fa-user-friends" },
-            { "label": "Services", "href": "#services", "icon": "fas fa-spa" },
-            { "label": "On-Site", "href": "#On-Site", "icon": "fas fa-calendar-alt" },
-            { "label": "Research", "href": "#research", "icon": "fas fa-clipboard-check" },
-            { "label": "Contact", "href": "#contact", "icon": "fas fa-phone-alt" }
-        ];
-
-        const researchItems = [
-            { 
-                "title": "Stress Reduction", 
-                "claim": "Massage therapy may help reduce perceived stress and promote relaxation. Proposed hormonal and neurochemical mechanisms remain uncertain.",
-                "icon": "fas fa-brain",
-                "source": "International Journal of Neuroscience",
-                "link": "https://pubmed.ncbi.nlm.nih.gov/16162447/"
-            },
-            { 
-                "title": "Pain Management", 
-                "claim": "Massage therapy may reduce pain and improve function in some musculoskeletal conditions, with evidence varying by condition and treatment approach.",
-                "quote": "Massage therapy may be effective for treatment of chronic back pain.",
-                "icon": "fas fa-hand-holding-heart",
-                "source": "Annals of Internal Medicine",
-                "link": "https://pubmed.ncbi.nlm.nih.gov/21727288/"
-            },
-            { 
-                "title": "Sleep and Massage",
-                "claim": "Some studies have reported sleep improvements after massage, but findings are limited and appear to vary across populations.",
-                "quote": "only the massage therapy group reported an increase in the number of sleep hours.",
-                "icon": "fas fa-bed",
-                "source": "Journal of Clinical Rheumatology",
-                "link": "https://pubmed.ncbi.nlm.nih.gov/17041326/"
-            },
-            { 
-                "title": "Immune-Related Biomarkers",
-                "claim": "Preliminary research has found short-term changes in some immune-related biomarkers following massage, but the clinical significance of these findings remains uncertain.",
-                "icon": "fas fa-shield-alt",
-                "source": "Journal of Alternative and Complementary Medicine",
-                "link": "https://pubmed.ncbi.nlm.nih.gov/20809811/"
-            },
-            { 
-                "title": "Blood Pressure", 
-                "claim": "Repeated massage has been associated with short-term reductions in blood pressure in some people with elevated blood pressure.",
-                "quote": "mean systolic and diastolic blood pressure in the massage group was significantly lower.",
-                "icon": "fas fa-heartbeat",
-                "source": "Iranian Journal of Nursing and Midwifery Research",
-                "link": "https://pubmed.ncbi.nlm.nih.gov/22039381/"
-            },
-            { 
-                "title": "Mental Health", 
-                "claim": "Research suggests massage may help reduce measured symptoms of anxiety and depression in some populations.",
-                "quote": "Reductions of trait anxiety and depression were MT's largest effects.",
-                "icon": "fas fa-smile",
-                "source": "Psychological Bulletin",
-                "link": "https://pubmed.ncbi.nlm.nih.gov/14717648/"
-            }
-        ];
-
-        const contactMethods = [
-            { 
-                "title": "Online Booking", 
-                "description": "Schedule appointments instantly through our secure online booking system.",
-                "icon": "fas fa-calendar-alt",
-                "color": "primary",
-                "action": "https://book.carepatron.com/Rebalance-Point-Massage/All?p=B9d7sKXDTG6LRym3U5.KQQ&sc=KURssp65QgyobWfzcaGHAQ",
-                "actionText": "Book Now",
-                "isExternal": true
-            },
-            { 
-                "title": "Phone & Text", 
-                "description": "Call or text us at (509) 285-9489 for individual appointment questions or special requests like couple's massage.",
-                "icon": "fas fa-phone-alt",
-                "color": "secondary",
-                "action": "tel:5092859489",
-                "actionText": "Call Now",
-                "isExternal": false
-            },
-            { 
-                "title": "Email", 
-                "description": "Send us an email at info@rebalancepointmassage.com for general inquiries.",
-                "icon": "fas fa-envelope",
-                "color": "accent",
-                "action": "mailto:info@rebalancepointmassage.com",
-                "actionText": "Email Us",
-                "isExternal": false
-            }
-        ];
-
-        const footerLinks = [
-            { "label": "Home", "href": "#home" },
-            { "label": "About Us", "href": "#about" },
-            { "label": "Services & Pricing", "href": "#services" },
-            { "label": "On-Site Chair Massage", "href": "#On-Site" },
-            { "label": "Research", "href": "#research" },
-            { "label": "Contact", "href": "#contact" },
-            { "label": "Privacy Policy", "href": "./privacy.html" },
-            { "label": "Messaging Terms", "href": "./terms.html" }
-        ];
-
-        // Reusable Render Functions
-        function renderNavItems(items, isMobile = false) {
-            return items.map(item => {
-                const mobileClass = isMobile ? "block py-3 px-4 text-lg hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-lg transition duration-300" : "text-dark hover:text-primary font-medium transition duration-300";
-                return `<li><a href="${item.href}" class="${mobileClass}"><i class="${item.icon} mr-2"></i>${item.label}</a></li>`;
-            }).join("");
-        }
-
-        function renderResearchItems(items) {
-            return items.map(item => `
-            <div class="bg-white rounded-xl p-6 shadow-md card-hover border border-gray-100 flex flex-col">
-                <div class="service-icon bg-primary bg-opacity-10 text-primary mb-4">
-                    <i class="${item.icon} text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-primary mb-3">${item.title}</h3>
-                <p class="text-gray-700 mb-4">${item.claim}</p>
-                ${item.quote ? `<div class="mb-4 p-3 bg-gray-50 rounded-lg border-l-2 border-primary border-opacity-30">
-                    <p class="text-sm text-gray-600 italic">"${item.quote}"</p>
-                </div>` : ""}
-                <div class="mb-4 text-xs text-gray-500">
-                    <i class="fas fa-book-open mr-1"></i> <span class="font-medium">${item.source}</span>
-                </div>
-                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-primary text-white font-semibold py-2 px-4 rounded-lg hover:bg-secondary transition duration-300 text-sm mt-auto">
-                    View Research
-                </a>
-            </div>`).join("");
-        }
-
-        function renderContactMethods(items) {
-            return items.map(item => {
-                const colorClass = item.color === "accent" ? "bg-accent text-dark" : `bg-${item.color} text-white`;
-                const targetAttr = item.isExternal ? 'target="_blank" rel="noopener noreferrer"' : '';
-                return `
-                <div class="contact-card bg-white rounded-xl p-6 border border-gray-200 text-center">
-                    <div class="service-icon ${colorClass} mx-auto">
-                        <i class="${item.icon} text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-primary mb-3">${item.title}</h3>
-                    <p class="text-gray-600 mb-6 break-words">${item.description}</p>
-                    <a href="${item.action}" ${targetAttr} class="inline-block ${colorClass.replace('text-dark', 'text-white')} font-semibold py-2 px-6 rounded-lg hover:opacity-90 transition duration-300">
-                        ${item.actionText}
-                    </a>
-                </div>`;
-            }).join("");
-        }
-
-        function renderFooterLinks(items) {
-            return items.map(item => `<li><a href="${item.href}" class="text-gray-300 hover:text-accent transition duration-300">${item.label}</a></li>`).join("");
-        }
-
-        // DOM Initialization
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // Render navigation
-            document.getElementById('desktop-nav').innerHTML = renderNavItems(navigationItems);
-            document.getElementById('mobile-nav-list').innerHTML = renderNavItems(navigationItems, true);
-            
-            // Render research items
-            document.getElementById('research-grid').innerHTML = renderResearchItems(researchItems);
-            
-            // Render contact methods
-            document.getElementById('contact-methods').innerHTML = renderContactMethods(contactMethods);
-            
-            // Render footer links
-            document.getElementById('footer-links').innerHTML = renderFooterLinks(footerLinks);
-            
-            // Mobile menu toggle
+
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileNav = document.getElementById('mobile-nav');
-            
+
             mobileMenuButton.addEventListener('click', function() {
                 mobileNav.classList.toggle('hidden');
                 mobileMenuButton.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden')));
@@ -670,51 +666,33 @@
                     icon.classList.add('fa-times');
                 }
             });
-            
-            // Smooth scrolling for anchor links
-            document.addEventListener('click', function(event) {
-                const link = event.target.closest('a[href^="#"]');
-                if (!link) return;
-                
-                const href = link.getAttribute('href');
-                if (href === '#') return;
-                
-                event.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    // Close mobile menu if open
-                    if (!mobileNav.classList.contains('hidden')) {
-                        mobileNav.classList.add('hidden');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
-                        const icon = mobileMenuButton.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                    
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+
+            mobileNav.addEventListener('click', function(event) {
+                if (!event.target.closest('a')) return;
+                mobileNav.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                const icon = mobileMenuButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
-            
-            // Add active class to current section in navigation
+
+            // Highlight the current section in the desktop navigation.
             function updateActiveNav() {
                 const sections = document.querySelectorAll('section[id]');
-                const navLinks = document.querySelectorAll('nav a[href^="#"]');
-                
+                const navLinks = document.querySelectorAll('#desktop-nav a[href^="#"]');
+
                 let currentSection = '';
                 const scrollPosition = window.scrollY + 100;
-                
+
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.clientHeight;
-                    
+
                     if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                         currentSection = section.getAttribute('id');
                     }
                 });
-                
+
                 navLinks.forEach(link => {
                     link.classList.remove('text-primary', 'font-semibold');
                     if (link.getAttribute('href') === `#${currentSection}`) {
@@ -722,10 +700,10 @@
                     }
                 });
             }
-            
+
             window.addEventListener('scroll', updateActiveNav);
-            updateActiveNav(); // Initial call
-            
+            updateActiveNav();
+
             // External link handler
             document.addEventListener('click', function(event) {
                 const externalLink = event.target.closest('a[target="_blank"]');
