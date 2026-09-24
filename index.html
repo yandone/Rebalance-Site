@@ -4,7 +4,7 @@
     <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rebalance Point Massage | Holistic Health & Wellness in Spokane, WA</title>
+    <title>Rebalance Point Massage | Therapeutic &amp; On-Site Chair Massage in Spokane</title>
 
     <!-- Favicon -->
      <link rel="icon" href="/favicon.ico">
@@ -13,11 +13,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     
-    <meta name="description" content="Professional massage therapy clinic in Spokane, WA. Patrick and Jodie Stewart offer holistic health services including therapeutic massage, cupping, and couples massage.">
-    <meta name="keywords" content="massage therapy Spokane, holistic health, cupping massage, couples massage, therapeutic massage, wellness clinic">
+    <meta name="description" content="Therapeutic massage in downtown Spokane, plus on-site chair massage for workplaces, races, tournaments, and sporting events in the Spokane area.">
+    <meta name="keywords" content="therapeutic massage Spokane, on-site chair massage Spokane, workplace chair massage, corporate chair massage, sporting event massage Spokane">
     <meta name="author" content="Rebalance Point Massage">
-    <meta property="og:title" content="Rebalance Point Massage | Holistic Health & Wellness">
-    <meta property="og:description" content="Professional massage therapy clinic in Spokane, WA offering holistic health services.">
+    <meta property="og:title" content="Rebalance Point Massage | Therapeutic &amp; On-Site Chair Massage">
+    <meta property="og:description" content="Therapeutic massage in downtown Spokane and on-site chair massage for local workplaces, races, tournaments, and sporting events.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rebalancepointmassage.com">
     <link rel="canonical" href="https://rebalancepointmassage.com">
@@ -64,6 +64,21 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(37, 110, 145, 0.15);
         }
+        #workplace {
+            scroll-margin-top: 6rem;
+        }
+        @media (min-width: 768px) and (max-width: 1279px) {
+            .onsite-planning { grid-column: 1 / -1; }
+            .site-desktop-nav { display: none; }
+            .site-mobile-menu-button { display: block; }
+            .site-mobile-nav:not(.hidden) { display: block; }
+        }
+        @media (min-width: 1280px) {
+            .onsite-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .onsite-workplace { grid-column: 1; grid-row: 1; }
+            .onsite-planning { grid-column: 2; grid-row: 1; }
+            .onsite-sports { grid-column: 3; grid-row: 1; }
+        }
     </style>
 </head>
 <body class="min-h-screen bg-light text-dark font-sans">
@@ -79,19 +94,19 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden text-primary text-xl">
+                <button id="mobile-menu-button" class="site-mobile-menu-button md:hidden text-primary text-xl" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
                     <i class="fas fa-bars"></i>
                 </button>
                 
                 <!-- Desktop Navigation -->
-                <ul id="desktop-nav" class="hidden md:flex space-x-8">
+                <ul id="desktop-nav" class="site-desktop-nav hidden md:flex space-x-8">
                     <!-- Navigation items will be rendered here -->
                 </ul>
             </nav>
             
             <!-- Mobile Navigation -->
-            <div id="mobile-nav" class="hidden md:hidden bg-white border-t py-4">
-                <ul class="space-y-3">
+            <div id="mobile-nav" class="site-mobile-nav hidden md:hidden bg-white border-t py-4">
+                <ul id="mobile-nav-list" class="space-y-3">
                     <!-- Mobile navigation items will be rendered here -->
                 </ul>
             </div>
@@ -104,7 +119,7 @@
             <div class="container mx-auto px-4">
                 <div class="max-w-3xl mx-auto text-center">
                     <h1 class="text-4xl md:text-5xl font-serif font-semibold mb-6">Holistic Health & Wellness Through Therapeutic Massage</h1>
-                    <p class="text-xl mb-8 opacity-90">Located in downtown Spokane, WA, Rebalance Point Massage offers personalized massage therapy to restore balance and promote overall wellbeing.</p>
+                    <p class="text-xl mb-8 opacity-90">Located in downtown Spokane, WA, Rebalance Point Massage offers personalized therapeutic massage in our clinic and on-site chair massage for local workplaces and events.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#services" class="bg-accent text-dark font-semibold py-3 px-8 rounded-lg hover:bg-opacity-90 transition duration-300">View Our Services</a>
                         <a href="https://book.carepatron.com/Rebalance-Point-Massage/All?p=B9d7sKXDTG6LRym3U5.KQQ&sc=KURssp65QgyobWfzcaGHAQ" target="_blank" rel="noopener noreferrer" class="bg-white text-primary font-semibold py-3 px-8 rounded-lg hover:bg-opacity-90 transition duration-300">Book Appointment</a>
@@ -171,6 +186,53 @@
             </div>
         </section>
 
+        <!-- On-Site Chair Massage Section -->
+        <section id="workplace" class="bg-primary bg-opacity-5 section-padding">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-semibold text-primary mb-4">On-Site Chair Massage</h2>
+                    <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Bring Rebalance Point Massage to your workplace or event.</p>
+                </div>
+
+                <div class="onsite-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                    <div class="onsite-workplace bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-serif font-semibold text-secondary mb-4">Rebalance Point Workplace Reset</h3>
+                        <p class="text-gray-700 mb-4">We bring brief, fully clothed chair massage sessions directly to Spokane-area workplaces and events. Patrick and Jodie adapt each 10–12 minute session to the individual, focusing on areas such as the neck, shoulders, upper back, forearms, and hands.</p>
+                        <p class="text-gray-700 mb-6">Suitable for employee and staff appreciation, wellness days, team events, and recurring workplace programs.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>Approximately 5–6 participants per therapist-hour</li>
+                            <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>One or two licensed massage therapists, depending on group size</li>
+                            <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>Massage chairs, setup, standard treatment supplies, and sanitation materials provided</li>
+                        </ul>
+                    </div>
+
+                    <div class="onsite-sports bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-serif font-semibold text-secondary mb-4">Sporting Events</h3>
+                        <p class="text-gray-700 mb-4">We bring brief, fully clothed chair massage to races, tournaments, fitness events, team events, and other athletic gatherings. Sessions can fit before, between, or after activities when appropriate for the event.</p>
+                        <p class="text-gray-700 mb-6">Work may focus on the neck, shoulders, upper back, arms, forearms, or hands, with each session adapted to the participant and setting.</p>
+                        <ul class="space-y-3 text-gray-700">
+                            <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>Brief sessions planned around participant flow</li>
+                            <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>One or two licensed therapists, depending on attendance</li>
+                            <li><i class="fas fa-check text-primary mr-2" aria-hidden="true"></i>Massage chairs, setup, supplies, and sanitation materials provided</li>
+                        </ul>
+                    </div>
+
+                    <div class="onsite-planning flex flex-col w-full max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-lg border border-primary">
+                        <h3 class="text-2xl font-serif font-semibold text-secondary mb-4">Plan your event</h3>
+                        <p class="text-3xl font-bold text-primary">$100 <span class="text-lg font-medium">per therapist-hour</span></p>
+                        <p class="text-gray-700 font-semibold mb-6">Two-hour minimum</p>
+                        <p class="text-gray-700 mb-4">Available for workplace and sporting events in Spokane and the surrounding area. Email us to coordinate the details.</p>
+                        <p class="text-gray-700 mb-6">Not sure how much time you need? Send us your estimated attendance and event time window, and we’ll help plan a simple schedule.</p>
+                        <div class="mt-auto">
+                            <a href="mailto:info@rebalancepointmassage.com?subject=On-Site%20Massage%20Event%20Inquiry" class="block w-full bg-primary text-white text-center font-semibold py-3 px-6 rounded-lg hover:bg-secondary transition duration-300">Request an On-Site Event</a>
+                            <p class="text-center text-gray-700 mt-4 break-words">Email <a href="mailto:info@rebalancepointmassage.com?subject=On-Site%20Massage%20Event%20Inquiry" class="text-primary font-semibold hover:underline">info@rebalancepointmassage.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Research Section -->
         <section id="research" class="bg-white section-padding">
             <div class="container mx-auto px-4">
@@ -202,7 +264,8 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8 mb-12">
                         <h3 class="text-2xl font-serif font-semibold text-secondary mb-6 text-center">How to Book Your Appointment</h3>
-                        <p class="text-gray-700 text-center mb-8">We use Carepatron for our online scheduling system. Our secure, HIPAA-compliant booking portal allows you to view availability and schedule appointments quickly and conveniently.</p>
+                        <p class="text-gray-700 text-center mb-4">We use Carepatron for our online scheduling system. Our secure, HIPAA-compliant booking portal allows you to view availability and schedule appointments quickly and conveniently.</p>
+                        <p class="text-gray-700 text-center mb-8 break-words">For on-site workplace or sporting events, please email <a href="mailto:info@rebalancepointmassage.com?subject=On-Site%20Massage%20Event%20Inquiry" class="text-primary font-semibold hover:underline">info@rebalancepointmassage.com</a> to arrange the details.</p>
                         
                         <div id="contact-methods" class="grid md:grid-cols-3 gap-6 mb-8">
                             <!-- Contact methods will be rendered here -->
@@ -225,7 +288,7 @@
                                 </div>
                                 <div class="text-gray-700 space-y-3">
                                     <p>We are available by appointment only. Available appointments can be viewed online via <a href="https://book.carepatron.com/Rebalance-Point-Massage/All?p=B9d7sKXDTG6LRym3U5.KQQ&sc=KURssp65QgyobWfzcaGHAQ" target="_blank" rel="noopener noreferrer" class="text-primary font-semibold hover:underline">Carepatron</a>.</p>
-                                    <p>If you have any further questions or inquiries, please contact us by phone, text, or email.</p>
+                                    <p>If you have questions about individual appointments, please contact us by phone, text, or email.</p>
                                 </div>
                             </div>
                         </div>
@@ -300,6 +363,7 @@
                         <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Member, AMTA</li>
                         <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> CPR & First Aid Certified</li>
                     </ul>
+                    <p class="text-gray-300 text-sm mt-4">Patrick Stewart, LMT — WA License MA60931077<br>Jodie Stewart, LMT — WA License MA60985110</p>
                 </div>
             </div>
             
@@ -317,6 +381,7 @@
             { "label": "Home", "href": "#home", "icon": "fas fa-home" },
             { "label": "About", "href": "#about", "icon": "fas fa-user-friends" },
             { "label": "Services", "href": "#services", "icon": "fas fa-spa" },
+            { "label": "On-Site", "href": "#workplace", "icon": "fas fa-calendar-alt" },
             { "label": "Research", "href": "#research", "icon": "fas fa-clipboard-check" },
             { "label": "Contact", "href": "#contact", "icon": "fas fa-phone-alt" }
         ];
@@ -423,7 +488,7 @@
             },
             { 
                 "title": "Phone & Text", 
-                "description": "Call or text us at (509) 285-9489 for questions or special requests like couple's massage.",
+                "description": "Call or text us at (509) 285-9489 for individual appointment questions or special requests like couple's massage.",
                 "icon": "fas fa-phone-alt",
                 "color": "secondary",
                 "action": "tel:5092859489",
@@ -445,6 +510,7 @@
             { "label": "Home", "href": "#home" },
             { "label": "About Us", "href": "#about" },
             { "label": "Services & Pricing", "href": "#services" },
+            { "label": "On-Site Chair Massage", "href": "#workplace" },
             { "label": "Research", "href": "#research" },
             { "label": "Contact", "href": "#contact" },
             { "label": "Privacy Policy", "href": "./privacy.html" },
@@ -532,7 +598,7 @@
             
             // Render navigation
             document.getElementById('desktop-nav').innerHTML = renderNavItems(navigationItems);
-            document.getElementById('mobile-nav').innerHTML = `<ul class="space-y-3">${renderNavItems(navigationItems, true)}</ul>`;
+            document.getElementById('mobile-nav-list').innerHTML = renderNavItems(navigationItems, true);
             
             // Render services
             document.getElementById('services-grid').innerHTML = renderServices(services);
@@ -552,6 +618,7 @@
             
             mobileMenuButton.addEventListener('click', function() {
                 mobileNav.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden')));
                 const icon = mobileMenuButton.querySelector('i');
                 if (mobileNav.classList.contains('hidden')) {
                     icon.classList.remove('fa-times');
@@ -576,6 +643,7 @@
                     // Close mobile menu if open
                     if (!mobileNav.classList.contains('hidden')) {
                         mobileNav.classList.add('hidden');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
                         const icon = mobileMenuButton.querySelector('i');
                         icon.classList.remove('fa-times');
                         icon.classList.add('fa-bars');

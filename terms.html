@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="css/tailwind.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <style>
+        @media (min-width: 768px) and (max-width: 1279px) {
+            .site-desktop-nav { display: none; }
+            .site-mobile-menu-button { display: block; }
+            .site-mobile-nav:not(.hidden) { display: block; }
+        }
+    </style>
 </head>
 <body class="min-h-screen bg-light text-dark font-sans">
     <header class="sticky top-0 z-50 bg-white shadow-sm">
@@ -27,19 +34,19 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden text-primary text-xl">
+                <button id="mobile-menu-button" class="site-mobile-menu-button md:hidden text-primary text-xl" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
                     <i class="fas fa-bars"></i>
                 </button>
                 
                 <!-- Desktop Navigation -->
-                <ul id="desktop-nav" class="hidden md:flex space-x-8">
+                <ul id="desktop-nav" class="site-desktop-nav hidden md:flex space-x-8">
                     <!-- Navigation items will be rendered here -->
                 </ul>
             </nav>
             
             <!-- Mobile Navigation -->
-            <div id="mobile-nav" class="hidden md:hidden bg-white border-t py-4">
-                <ul class="space-y-3">
+            <div id="mobile-nav" class="site-mobile-nav hidden md:hidden bg-white border-t py-4">
+                <ul id="mobile-nav-list" class="space-y-3">
                     <!-- Mobile navigation items will be rendered here -->
                 </ul>
             </div>
@@ -109,6 +116,7 @@
                         <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Member, AMTA</li>
                         <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> CPR & First Aid Certified</li>
                     </ul>
+                    <p class="text-gray-300 text-sm mt-4">Patrick Stewart, LMT — WA License MA60931077<br>Jodie Stewart, LMT — WA License MA60985110</p>
                 </div>
             </div>
             
@@ -125,6 +133,7 @@
             { "label": "Home", "href": "./index.html#home", "icon": "fas fa-home" },
             { "label": "About", "href": "./index.html#about", "icon": "fas fa-user-friends" },
             { "label": "Services", "href": "./index.html#services", "icon": "fas fa-spa" },
+            { "label": "On-Site", "href": "./index.html#workplace", "icon": "fas fa-calendar-alt" },
             { "label": "Research", "href": "./index.html#research", "icon": "fas fa-clipboard-check" },
             { "label": "Contact", "href": "./index.html#contact", "icon": "fas fa-phone-alt" }
         ];
@@ -133,6 +142,7 @@
             { "label": "Home", "href": "./index.html#home" },
             { "label": "About Us", "href": "./index.html#about" },
             { "label": "Services & Pricing", "href": "./index.html#services" },
+            { "label": "On-Site Chair Massage", "href": "./index.html#workplace" },
             { "label": "Research", "href": "./index.html#research" },
             { "label": "Contact", "href": "./index.html#contact" },
             { "label": "Privacy Policy", "href": "./privacy.html" },
@@ -153,7 +163,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('current-year').textContent = new Date().getFullYear();
             document.getElementById('desktop-nav').innerHTML = renderNavItems(navigationItems);
-            document.getElementById('mobile-nav').innerHTML = `<ul class="space-y-3">${renderNavItems(navigationItems, true)}</ul>`;
+            document.getElementById('mobile-nav-list').innerHTML = renderNavItems(navigationItems, true);
             document.getElementById('footer-links').innerHTML = renderFooterLinks(footerLinks);
 
             const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -161,6 +171,7 @@
             
             mobileMenuButton.addEventListener('click', function() {
                 mobileNav.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden')));
                 const icon = mobileMenuButton.querySelector('i');
                 if (mobileNav.classList.contains('hidden')) {
                     icon.classList.remove('fa-times');
