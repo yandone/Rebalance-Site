@@ -84,6 +84,10 @@
 .theme-toggle-trigger:hover { background-color: rgba(37, 110, 145, 0.08); }
 [data-theme="dark"] .theme-toggle-trigger:hover { background-color: rgba(111, 183, 217, 0.12); }
 
+/* Footer sits on a fixed dark surface regardless of theme, so its trigger needs its own contrast */
+.theme-toggle--footer .theme-toggle-trigger { color: #F3EFE6; border-color: rgba(255, 255, 255, 0.35); }
+.theme-toggle--footer .theme-toggle-trigger:hover { background-color: rgba(255, 255, 255, 0.12); }
+
 .theme-toggle-trigger:focus-visible,
 .theme-toggle-option:focus-visible {
     outline: 2px solid var(--rp-focus-ring);

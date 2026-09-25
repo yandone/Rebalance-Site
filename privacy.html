@@ -74,29 +74,6 @@
                     <button id="mobile-menu-button" class="site-mobile-menu-button md:hidden text-primary text-xl" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
                         <i class="fas fa-bars"></i>
                     </button>
-                    <div class="theme-toggle site-mobile-menu-button md:hidden" data-theme-toggle>
-                        <button type="button" id="theme-toggle-trigger-mobile" class="theme-toggle-trigger" data-theme-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="theme-toggle-menu-mobile">
-                            <i class="fas fa-sun" data-theme-icon aria-hidden="true"></i>
-                            <span class="sr-only">Change color theme</span>
-                        </button>
-                        <div id="theme-toggle-menu-mobile" class="theme-toggle-menu" data-theme-menu role="menu" aria-label="Color theme" hidden>
-                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="light" aria-checked="false">
-                                <i class="fas fa-sun theme-toggle-option-icon" aria-hidden="true"></i>
-                                <span class="theme-toggle-option-label">Light</span>
-                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
-                            </button>
-                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="dark" aria-checked="false">
-                                <i class="fas fa-moon theme-toggle-option-icon" aria-hidden="true"></i>
-                                <span class="theme-toggle-option-label">Dark</span>
-                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
-                            </button>
-                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="system" aria-checked="false">
-                                <i class="fas fa-desktop theme-toggle-option-icon" aria-hidden="true"></i>
-                                <span class="theme-toggle-option-label">System</span>
-                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="flex items-center gap-6">
@@ -109,29 +86,6 @@
                     <li><a href="./index.html#research" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-clipboard-check mr-2" aria-hidden="true"></i>Research</a></li>
                     <li><a href="./index.html#contact" class="text-dark hover:text-primary font-medium transition duration-300"><i class="fas fa-phone-alt mr-2" aria-hidden="true"></i>Contact</a></li>
                 </ul>
-                    <div class="theme-toggle site-desktop-nav hidden md:flex items-center" data-theme-toggle>
-                        <button type="button" id="theme-toggle-trigger-desktop" class="theme-toggle-trigger" data-theme-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="theme-toggle-menu-desktop">
-                            <i class="fas fa-sun" data-theme-icon aria-hidden="true"></i>
-                            <span class="sr-only">Change color theme</span>
-                        </button>
-                        <div id="theme-toggle-menu-desktop" class="theme-toggle-menu" data-theme-menu role="menu" aria-label="Color theme" hidden>
-                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="light" aria-checked="false">
-                                <i class="fas fa-sun theme-toggle-option-icon" aria-hidden="true"></i>
-                                <span class="theme-toggle-option-label">Light</span>
-                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
-                            </button>
-                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="dark" aria-checked="false">
-                                <i class="fas fa-moon theme-toggle-option-icon" aria-hidden="true"></i>
-                                <span class="theme-toggle-option-label">Dark</span>
-                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
-                            </button>
-                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="system" aria-checked="false">
-                                <i class="fas fa-desktop theme-toggle-option-icon" aria-hidden="true"></i>
-                                <span class="theme-toggle-option-label">System</span>
-                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </nav>
             
@@ -233,6 +187,31 @@
             </div>
             
             <div class="pt-8 border-t border-gray-700 text-center" style="color:#a2a9b4;">
+                <div class="flex justify-center mb-6">
+                    <div class="theme-toggle theme-toggle--footer" data-theme-toggle>
+                        <button type="button" id="theme-toggle-trigger-footer" class="theme-toggle-trigger" data-theme-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="theme-toggle-menu-footer">
+                            <i class="fas fa-sun" data-theme-icon aria-hidden="true"></i>
+                            <span class="sr-only">Change color theme</span>
+                        </button>
+                        <div id="theme-toggle-menu-footer" class="theme-toggle-menu" data-theme-menu role="menu" aria-label="Color theme" hidden>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="light" aria-checked="false">
+                                <i class="fas fa-sun theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">Light</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="dark" aria-checked="false">
+                                <i class="fas fa-moon theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">Dark</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                            <button type="button" class="theme-toggle-option" role="menuitemradio" data-theme-option="system" aria-checked="false">
+                                <i class="fas fa-desktop theme-toggle-option-icon" aria-hidden="true"></i>
+                                <span class="theme-toggle-option-label">System</span>
+                                <i class="fas fa-check theme-toggle-option-check" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <p>&copy; <span id="current-year">2026</span> Rebalance Point Massage. All rights reserved. | 206 S Post St STE 712C, Spokane, WA 99201</p>
                 <p class="mt-2 text-sm">Locally owned and operated by Patrick and Jodie Stewart.</p>
                 <p class="mt-4 text-xs">This website does not collect personal information through a direct web form. Online appointment scheduling is handled through Carepatron's secure platform. Please review our <a href="./privacy.html" class="text-gray-300 hover:text-accent underline">Privacy Policy</a> and <a href="./terms.html" class="text-gray-300 hover:text-accent underline">Messaging Terms</a> for details about informational communications.</p>
